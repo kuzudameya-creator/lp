@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>初回お試し予約｜家事代行サービス ととのう</title>
+  <meta name="description" content="家事代行サービス「ととのう」の初回お試し予約フォーム。掃除・洗濯・料理の作り置きを、初回半額でお試しいただけます。入力は約1分です。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/form.css">
+</head>
+<body class="page-form">
+
+  <header class="header header--form">
+    <a href="index.html" class="logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="16" r="13"/><path d="M10 17 C12 21 20 21 22 17"/><path d="M11 12 H13"/><path d="M19 12 H21"/></svg>
+      <span class="logo__name">ととのう</span>
+    </a>
+    <p class="header__tel">お電話でのご予約 <a href="tel:0120000000">0120-000-000</a><span>（9:00〜18:00）</span></p>
+  </header>
+
+  <main>
+    <div class="form-head">
+      <p class="form-head__badge">初回限定 半額</p>
+      <h1 class="form-head__title">お試し予約</h1>
+      <p>入力は約1分。予約後に担当者から確認のお電話をします。</p>
+      <ol class="steps" aria-label="予約の手順">
+        <li class="steps__item is-current" aria-current="step"><span>1</span>入力</li>
+        <li class="steps__item"><span>2</span>完了</li>
+      </ol>
+    </div>
+
+    <div class="form-layout">
+      <!--
+        GitHub Pagesでは送信データを受け取れないため、送信すると完了ページに移動するだけのデモです。
+        実際にメールで受け取る場合は、Formspreeなどで発行したURLを action に入れ、method="post" にしてください。
+      -->
+      <form class="form-card" action="thanks.html" method="get">
+
+        <fieldset class="field">
+          <legend class="field__title">プランを選ぶ<span class="req">必須</span></legend>
+          <div class="cards cards--2">
+            <label class="card">
+              <input type="radio" name="plan" value="スポットプラン" required>
+              <span class="card__name">スポットプラン</span>
+              <span class="card__text">必要なときに1回から</span>
+              <span class="card__price">初回 ¥4,400<s>¥8,800</s></span>
+            </label>
+            <label class="card">
+              <input type="radio" name="plan" value="定期プラン" checked>
+              <span class="card__badge">人気No.1</span>
+              <span class="card__name">定期プラン</span>
+              <span class="card__text">毎週・隔週で同じスタッフが訪問</span>
+              <span class="card__price">初回 ¥3,850<s>¥7,700</s></span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="field">
+          <legend class="field__title">お願いしたいこと<span class="opt">複数選択可</span></legend>
+          <div class="cards cards--3">
+            <label class="card card--image">
+              <input type="checkbox" name="service" value="おそうじ" checked>
+              <img src="images/service-clean.svg" alt="" width="800" height="500">
+              <span class="card__name">おそうじ</span>
+            </label>
+            <label class="card card--image">
+              <input type="checkbox" name="service" value="洗濯・片づけ">
+              <img src="images/service-laundry.svg" alt="" width="800" height="500">
+              <span class="card__name">洗濯・片づけ</span>
+            </label>
+            <label class="card card--image">
+              <input type="checkbox" name="service" value="料理の作り置き">
+              <img src="images/service-cook.svg" alt="" width="800" height="500">
+              <span class="card__name">料理の作り置き</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="field">
+          <legend class="field__title">ご希望の日時<span class="req">必須</span></legend>
+          <div class="datetime">
+            <label class="datetime__label" for="date1">第1希望</label>
+            <input class="input" type="date" id="date1" name="date1" required>
+            <select class="input input--select" name="time1" aria-label="第1希望の時間">
+              <option>9:00〜11:00</option>
+              <option>13:00〜15:00</option>
+              <option>15:00〜17:00</option>
+            </select>
+          </div>
+          <div class="datetime">
+            <label class="datetime__label" for="date2">第2希望</label>
+            <input class="input" type="date" id="date2" name="date2">
+            <select class="input input--select" name="time2" aria-label="第2希望の時間">
+              <option>9:00〜11:00</option>
+              <option>13:00〜15:00</option>
+              <option>15:00〜17:00</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset class="field">
+          <legend class="field__title">お客様情報<span class="req">必須</span></legend>
+          <div class="grid-2">
+            <label class="label">お名前
+              <input class="input" type="text" name="name" autocomplete="name" placeholder="山田 花子" required>
+            </label>
+            <label class="label">電話番号
+              <input class="input" type="tel" name="tel" autocomplete="tel" placeholder="090-1234-5678" pattern="0[0-9\-]{9,12}" title="半角数字とハイフンで入力してください" required>
+            </label>
+          </div>
+          <label class="label">メールアドレス
+            <input class="input" type="email" name="email" autocomplete="email" placeholder="example@mail.com" required>
+          </label>
+          <label class="label">訪問先のご住所
+            <input class="input" type="text" name="address" autocomplete="street-address" placeholder="○○県○○市○○町1-2-3" required>
+          </label>
+          <div class="grid-2">
+            <label class="label">間取り
+              <select class="input input--select" name="room">
+                <option>1LDK以下</option>
+                <option selected>2LDK〜3LDK</option>
+                <option>4LDK以上・戸建て</option>
+              </select>
+            </label>
+            <label class="label">ペット
+              <select class="input input--select" name="pet">
+                <option>いない</option>
+                <option>犬</option>
+                <option>猫</option>
+                <option>その他</option>
+              </select>
+            </label>
+          </div>
+          <label class="label">ご要望<span class="label__note">任意。重点的にお願いしたい場所などをお書きください</span>
+            <textarea class="input input--textarea" name="message" rows="4" placeholder="例）お風呂とキッチンを中心に／作り置きは子ども向けの味付けで"></textarea>
+          </label>
+        </fieldset>
+
+        <label class="agree">
+          <input type="checkbox" name="agree" required>
+          <span><a href="#">利用規約</a>と<a href="#">個人情報の取り扱い</a>に同意する</span>
+        </label>
+
+        <button type="submit" class="btn btn--large form-card__submit">この内容で予約する</button>
+      </form>
+
+      <aside class="side">
+        <div class="side__box">
+          <p class="side__title">料金の目安（税込）</p>
+          <dl class="side__price">
+            <div><dt>スポットプラン</dt><dd>初回 <strong>¥4,400</strong></dd></div>
+            <div><dt>定期プラン</dt><dd>初回 <strong>¥3,850</strong></dd></div>
+          </dl>
+          <p class="side__note">交通費込み・2時間。延長は30分ごとに承ります。</p>
+        </div>
+        <div class="side__box">
+          <p class="side__title">安心のポイント</p>
+          <ul class="checklist">
+            <li>しつこい勧誘はありません</li>
+            <li>スタッフは全員研修済み・損害保険加入</li>
+            <li>前日18時までキャンセル無料</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer footer--form"><small>&copy; ととのう</small></footer>
+</body>
+</html>
